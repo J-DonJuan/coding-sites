@@ -34,13 +34,15 @@ let menu = {
 
 menu.appetizers = "Mozzerella Sticks";
 menu.appetizers = "Onion Rings";
+console.log(menu._courses._appetizers);
 menu.mains = "Steak";
 menu.mains = "Eggs";
 menu.desserts = "Cake";
 menu.desserts = "Ice Cream";
 menu.courses;
 
-menu.addDishToCourse("_appetizers", "Mozzerella Sticks + 8 extra", 5.99);
+menu.addDishToCourse("_appetizers", "Extra Mozzerella Sticks", 5.99);
+menu.addDishToCourse("_mains", "Pork Chops", 18.99);
 menu.courses;
 // menu.courses;
 
@@ -55,14 +57,3 @@ menu.courses;
 
 // // console.log(`dish.string1 = ${dish.string1}, dish.string2 = ${dish.string2}`);
 // console.log(dish);
-
-
-
-// Set some values using setters for testing
-// menu.appetizers = "Bread";
-// menu.desserts = "Rice Pudding";
-// menu.mains = "Steak";
-
-// MANUAL ASSIGNMENT FOR TESTING
-// menu._courses._appetizers = "Cheese";
-// menu._courses._mains = "Steak";
