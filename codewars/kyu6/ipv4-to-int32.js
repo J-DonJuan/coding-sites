@@ -10,27 +10,42 @@ Because the above IP address has 32 bits, we can represent it as the 32 bit numb
 
 Write a function ip_to_int32(ip) ( JS: ipToInt32(ip) ) that takes an IPv4 address and returns a 32 bit number. */
 
-// Test IP address
-let ipAddress = "192.168.1.32";
+const ipToInt32 = ip => {
+    return convertToTotal(convertToBinaryString(ip));
+}
 
+// Convert single octet into a binary representation
+const convertToBinary = sampleNum => {
+    let digitRepresentation = 128;
+    let newString = [];
+    for (i = 0; i < 8; i++){
+        if (sampleNum >= digitRepresentation) {
+            newString.push("1");
+            sampleNum -= digitRepresentation;
+        } else {
+            newString.push("0")
+        }
+        digitRepresentation = digitRepresentation / 2;
+    }
+    return newString.join('');
+}
 
+// Convert entire ip address to single binary string
+const convertToBinaryString = ipAddress => {
+    let octetArray = ipAddress.split('.');
+    return convertToBinary(Number(octetArray[0])) + convertToBinary(Number(octetArray[1]))
+    + convertToBinary(Number(octetArray[2])) + convertToBinary(Number(octetArray[3]));
+}
 
-// Split up 4 octets into separate variables & convert to a number
-let octetArray = ipAddress.split('.');
-let octet1 = Number(octetArray[0]);
-let octet2 = Number(octetArray[1]);
-let octet3 = Number(octetArray[2]);
-let octet4 = Number(octetArray[3]);
-
-// Convert each octet into a binary representation
-
-
-// Convert each octet to binary
-
-
-
-
-// Convert 32 bit binary address to a 32 bit number representation
-
-
-
+// Convert binary string to total number representation
+const convertToTotal = binaryString => {
+    let total = 0;
+    let bIndex = 31;
+    for (const char of binaryString){
+        if (char === "1"){
+            total += 2 ** bIndex;
+        }
+        bIndex -= 1;
+    }
+    return total;
+}
