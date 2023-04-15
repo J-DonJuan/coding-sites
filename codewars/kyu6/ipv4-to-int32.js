@@ -10,3 +10,27 @@ Because the above IP address has 32 bits, we can represent it as the 32 bit numb
 
 Write a function ip_to_int32(ip) ( JS: ipToInt32(ip) ) that takes an IPv4 address and returns a 32 bit number. */
 
+// Test IP address
+let ipAddress = "192.168.1.32";
+
+
+
+// Split up 4 octets into separate variables & convert to a number
+let octetArray = ipAddress.split('.');
+let octet1 = Number(octetArray[0]);
+let octet2 = Number(octetArray[1]);
+let octet3 = Number(octetArray[2]);
+let octet4 = Number(octetArray[3]);
+
+// Convert each octet into a binary representation
+
+
+// Convert each octet to binary
+
+
+
+
+// Convert 32 bit binary address to a 32 bit number representation
+
+
+
