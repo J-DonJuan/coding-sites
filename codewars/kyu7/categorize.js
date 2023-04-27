@@ -19,13 +19,18 @@ input =  [[18, 20], [45, 2], [61, 12], [37, 6], [21, 21], [78, 9]]
 const openOrSenior = data => {
     let output = [];
     input.forEach(arrayOfTwo => {
-        if (arrayOfTwo[0] >= 55 && arrayOfTwo[1] > 7){
-            output.push("Senior");
-        } else {
-            output.push("Open");
-        }
+        arrayOfTwo[0] >= 55 && arrayOfTwo[1] > 7 ? output.push("Senior") : output.push("Open");
     })
     return output;
 }
 
 console.log(openOrSenior(input));
+
+// // Previous implementation
+// input.forEach(arrayOfTwo => {
+//     if (arrayOfTwo[0] >= 55 && arrayOfTwo[1] > 7){
+//         output.push("Senior");
+//     } else {
+//         output.push("Open");
+//     }
+// })
