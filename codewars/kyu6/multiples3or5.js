@@ -26,8 +26,16 @@ const solution = number => {
         }
     };
 
-    console.log(multiplesArray);
-    return multiplesArray.reduce( (acc, num) => acc + num);
+    if (multiplesArray.length === 0){
+        return 0;
+    } else {
+        return multiplesArray.reduce( (acc, num) => acc + num);
+    }
 }
 
+// Testing function
+console.log(solution(80));
 console.log(solution(10));
+console.log(solution(1));
+console.log(solution(2));
+console.log(solution(-38));
