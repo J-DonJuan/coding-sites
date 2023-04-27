@@ -7,30 +7,13 @@ Additionally, if the number is negative, return 0 (for languages that do have th
 Note: If the number is a multiple of both 3 and 5, only count it once. */
 
 const solution = number => {
-    number -= 1;
-    let multiplesArray = [];
-    if (number < 0){
-        return 0;
-    };
-
-    for (number; number > 0; number--){
-        if (number % 3 == 0){
-            multiplesArray.push(number)
+    let sum = 0;
+    for (let i = 1; i < number; i++){
+        if (i % 3 === 0 || i % 5 === 0){
+            sum += i;
         }
-        if (number % 5 == 0){
-            if (multiplesArray.includes(number)){
-                continue;
-            } else {
-                multiplesArray.push(number);
-            }
-        }
-    };
-
-    if (multiplesArray.length === 0){
-        return 0;
-    } else {
-        return multiplesArray.reduce( (acc, num) => acc + num);
     }
+    return sum;
 }
 
 // Testing function
