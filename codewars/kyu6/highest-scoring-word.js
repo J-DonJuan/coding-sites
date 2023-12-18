@@ -22,14 +22,11 @@ function high(x){
 
 
     for (const word of arrOfWords){
-        // Split the each word into an array of chars
-        let arrOfChars = word.split('');
-
         // Reset current word score before iterating over new word
         let currentWordScore = 0;
 
         // Iterate over each char in word & tally score
-        for (const char of arrOfChars){
+        for (const char of word){
             currentWordScore += char.charCodeAt(0) - 96;
         }
 
@@ -41,7 +38,6 @@ function high(x){
     }
     return leadingWord;
 }
-
 
 
 
